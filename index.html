@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge 2</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="/assets/responsive.css" />
+  </head>
+  <body>
+    <article class="container">
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <a href="" data-target="true">1</a>
+              <div class="para">
+                <p>STEP 1</p>
+                <h2>YOUR INFO</h2>
+              </div>
+            </li>
+            <li>
+              <a href="" data-target="false">2</a>
+              <div class="para">
+                <p>STEP 2</p>
+                <h2>SELECT A PLAN</h2>
+              </div>
+            </li>
+            <li>
+              <a href="" data-target="false">3</a>
+              <div class="para">
+                <p>STEP 3</p>
+                <h2>ADD-ONS</h2>
+              </div>
+            </li>
+            <li>
+              <a href="" data-target="false">4</a>
+              <div class="para">
+                <p>STEP 4</p>
+                <h2>SUMMARY</h2>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <aside>
+        <section class="c1" data-active="true">
+          <div class="title">
+            <h1>Personal info</h1>
+            <p>Please provide your name, email address, and phone number.</p>
+          </div>
+          <div class="personnalInfo">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="e.g. Stephen King" />
+            <label for="email">Email Address</label>
+            <input
+              type="text"
+              name="email"
+              placeholder="e.g. stephenking@lorem.com"
+            />
+            <label for="phone">Phone Number</label>
+            <input
+              type="text"
+              name="phone"
+              placeholder="e.g. + 1 234 567 890"
+            />
+          </div>
+        </section>
+        <section class="c2" data-active="false">
+          <div class="title">
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+          </div>
+          <article id="choice">
+            <input type="radio" name="plan" id="arcade" checked />
+            <input type="radio" name="plan" id="advanced" />
+            <input type="radio" name="plan" id="pro" />
+            <label for="arcade" class="toggle">
+              <img src="/assets/images/icon-arcade.svg" alt="Arcade plan choice" />
+              <h2>Arcade</h2>
+              <p>$9/mo</p>
+              <p>2 months free</p>
+            </label>
+            <label for="advanced">
+              <img src="/assets/images/icon-advanced.svg" alt="Advanced plan choice" />
+              <h2>Advanced</h2>
+              <p>$12/mo</p>
+              <p>2 months free</p>
+            </label>
+            <label for="pro">
+              <img src="/assets/images/icon-pro.svg" alt="Pro plan choice" />
+              <h2>Pro</h2>
+              <p>$15/mo</p>
+              <p>2 months free</p>
+            </label>
+          </article>
+          <article id="durationPlan">
+            <h2 data-select="true">Monthly</h2>
+            <div id="checkPlan">
+              <input type="checkbox" name="" id="checkboxPlan" checked />
+              <label for="checkboxPlan"><span></span></label>
+            </div>
+            <h2 data-select="false">Yearly</h2>
+          </article>
+        </section>
+        <section class="c3" data-active="false">
+          <div class="title">
+            <h1>Pick add-ons</h1>
+            <p>Add-ons help enhance your gaming experience.</p>
+          </div>
+          <article id="PickAddOns">
+            <div class="card">
+              <label for="OS">
+                <input type="checkbox" name="" id="OS" />
+                <div class="access">
+                  <h2>Online service</h2>
+                  <p>Access to multiplayer games</p>
+                </div>
+                <h3 class="prices">+$1/mo</h3>
+              </label>
+            </div>
+            <div class="card">
+              <label for="LS">
+                <input type="checkbox" name="" id="LS" />
+                <div class="access">
+                  <h2>Larger storage</h2>
+                  <p>Extra 1TB of cloud save</p>
+                </div>
+                <h3 class="prices">+$2/mo</h3>
+              </label>
+            </div>
+            <div class="card">
+              <label for="CP">
+                <input type="checkbox" name="" id="CP" />
+                <div class="access">
+                  <h2>Customizable profile</h2>
+                  <p>Custom theme on your profile</p>
+                </div>
+                <h3 class="prices">+$2/mo</h3>
+              </label>
+            </div>
+          </article>
+        </section>
+        <section class="c4" data-active="false">
+          <div class="title">
+            <h1>Finishing up</h1>
+            <p>Double-ckeck everything looks OK before confirming</p>
+          </div>
+          <article id="components">
+            <div class="planResult">
+              <aside>
+                <h2></h2>
+                <span id="changeDuration">Change</span>
+              </aside>
+              <aside>
+                <p></p>
+              </aside>
+            </div>
+            <div class="addOnsResult">
+              <aside>
+              </aside>
+            </div>
+          </article>
+          <article id="result">
+            <p></p>
+            <h2></h2>
+          </article>
+        </section>
+        <section class="c5" data-active="false">
+          <img src="/assets/images/icon-thank-you.svg" alt="Thanks you for confirming" />
+          <h1>Thank you!</h1>
+          <p>
+            Thanks for confirming your subscription! We hope you have fun using
+            our platform. if you ever need support, please feel free to email us
+            at support@loremgaming.com
+          </p>
+        </section>
+        <div class="btn">
+          <button id="prev">Go back</button>
+          <button id="next">Next Step</button>
+        </div>
+      </aside>
+    </article>
+    <script src="/assets/script.js"></script>
+  </body>
+</html>

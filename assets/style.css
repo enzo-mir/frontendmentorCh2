@@ -1,0 +1,480 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+
+@font-face {
+  font-family: boldFont;
+  src: url(/assets/fonts/Ubuntu-Bold.ttf);
+}
+@font-face {
+  font-family: mediumFont;
+  src: url(/assets/fonts/Ubuntu-Medium.ttf);
+}
+@font-face {
+  font-family: regularFont;
+  src: url(/assets/fonts/Ubuntu-Regular.ttf);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(240, 246, 255);
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 70%;
+  column-gap: 20px;
+  background: #fff;
+  padding: 1em;
+  border-radius: 10px;
+  min-width: 880px;
+}
+
+.container > aside:nth-child(1) {
+  position: relative;
+  width: 20%;
+  height: 100%;
+  background-image: url(/assets/images/bg-sidebar-desktop.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  min-width: 258px;
+}
+
+nav {
+  position: relative;
+  width: 100%;
+  height: 50%;
+}
+ul {
+  display: grid;
+  justify-content: space-around;
+  grid-template-rows: repeat(4, 1fr);
+  margin: 20px auto 0 20px;
+  width: fit-content;
+  height: 100%;
+  color: white;
+}
+
+li {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  justify-content: left;
+}
+
+li a {
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  padding: 1em;
+  width: 1ch;
+  height: 1ch;
+  border: 1px solid white;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+li a[data-target="true"] {
+  background-color: white;
+  color: hsl(213, 96%, 18%);
+}
+
+.para {
+  font-size: 16px;
+}
+.para p {
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.para h2 {
+  font-size: 16px;
+}
+
+.container aside:last-child {
+  position: relative;
+  width: 80%;
+  height: 100%;
+}
+section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  padding-top: 50px;
+  row-gap: 40px;
+  transition: all 0.5s ease-out;
+}
+
+section[data-active="true"] {
+  z-index: 1;
+  opacity: 1;
+}
+section[data-active="false"] {
+  z-index: 0;
+  opacity: 0;
+}
+
+/* #C1 --------------------------------*/
+
+section .title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+section .title h1 {
+  font-family: regularFont;
+  font-size: 2em;
+  color: hsl(213, 96%, 18%);
+}
+section .title p {
+  color: rgba(33, 33, 33, 0.569);
+}
+
+.c1 .personnalInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 10px;
+}
+
+.c1 .personnalInfo *:nth-child(odd) {
+  margin-top: 20px;
+}
+.c1 .personnalInfo input {
+  padding: 1em;
+  border-radius: 7.5px;
+  border: 1px solid rgba(41, 41, 41, 0.2);
+}
+.c1 .personnalInfo label {
+  font-family: mediumFont;
+  font-weight: 400;
+  color: hsl(213, 96%, 18%);
+}
+
+/* #C2 --------------------------------*/
+
+#choice {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  justify-content: space-around;
+  gap: 20px;
+}
+#choice input {
+  display: none;
+}
+
+#choice label {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  gap: 5px;
+  width: 100%;
+  height: fit-content;
+  border: 1px solid rgba(41, 41, 41, 0.2);
+  border-radius: 10px;
+  padding: 1em;
+  transition: all 0.2s ease-out;
+}
+#choice label:hover {
+  border: 1px solid hsl(213, 96%, 18%);
+  cursor: pointer;
+}
+#choice label.toggle {
+  background: hsla(228, 100%, 84%, 0.2);
+  border: 1px solid hsl(213, 96%, 18%);
+}
+
+#choice label img {
+  max-width: 40px;
+  padding-bottom: 40px;
+}
+#choice p:nth-child(4) {
+  color: hsl(213, 96%, 18%);
+  font-family: mediumFont;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+#choice p:nth-child(3) {
+  color: rgba(115, 115, 116, 0.8);
+}
+.c2 h2 {
+  font-size: 16px;
+  font-family: boldFont;
+  transition: all 0.2s ease-out;
+}
+
+#durationPlan {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: rgba(185, 197, 255, 0.3);
+  padding-block: 15px;
+  border-radius: 5px;
+}
+
+#durationPlan h2[data-select="true"] {
+  color: hsl(213, 96%, 18%);
+}
+#durationPlan h2[data-select="false"] {
+  color: hsla(213, 96%, 18%, 0.38);
+}
+
+#checkPlan {
+  position: relative;
+  width: 50px;
+  height: 20px;
+}
+#checkPlan input {
+  display: none;
+}
+#checkPlan label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: hsl(213, 96%, 18%);
+  border-radius: 50px;
+}
+#checkPlan label:hover {
+  cursor: pointer;
+}
+#checkPlan input:checked ~ label > span {
+  transform: translate(25%, -50%);
+  left: 0px;
+}
+#checkPlan input:not(:checked) ~ label > span {
+  transform: translate(-125%, -50%);
+  left: 100%;
+}
+
+#checkPlan label > span {
+  position: absolute;
+  transition: all 0.3s ease-out;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* #C3 ----------------------- */
+
+#PickAddOns {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+#PickAddOns .card {
+  position: relative;
+  height: auto;
+  width: 100%;
+  border: 1px solid rgba(185, 197, 255, 0.3);
+  border-radius: 10px;
+}
+#PickAddOns .card:hover {
+  border: 1px solid hsl(213, 96%, 18%);
+  background-color: hsla(228, 100%, 84%, 0.1);
+}
+#PickAddOns .card label {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  place-items: center left;
+  column-gap: 30px;
+  width: 100%;
+  padding: 1.5em;
+  border-radius: 10px;
+}
+#PickAddOns .card label:hover {
+  cursor: pointer;
+}
+#PickAddOns .card label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: hsl(243, 100%, 62%);
+}
+#PickAddOns .card label .access {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#PickAddOns .card label .access h2 {
+  font-size: 16px;
+  font-family: boldFont;
+}
+#PickAddOns .card label .access p {
+  color: rgba(115, 115, 116, 0.8);
+  font-family: regularFont;
+}
+
+#PickAddOns .card label h3 {
+  color: hsl(243, 100%, 62%);
+  font-size: 16px;
+}
+
+/* #C4 ----------------------------------------- */
+
+#components {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(185, 197, 255, 0.3);
+  padding: 2em;
+  border-radius: 10px;
+}
+
+#components .planResult {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(115, 115, 116, 0.3);
+  padding-block-end: 40px;
+}
+#components .planResult aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+}
+#components .planResult aside:first-child {
+  gap: 5px;
+}
+#components .planResult aside h2 {
+  font-size: 16px;
+  font-family: boldFont;
+}
+#components .planResult aside p {
+  font-family: boldFont;
+}
+#components .addOnsResult {
+  width: 100%;
+  height: fit-content;
+}
+
+#components .addOnsResult aside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+#components .addOnsResult aside p:nth-child(-n + 2) {
+  padding-block: 1em 0.5em;
+}
+#components .addOnsResult aside p {
+  padding-block: 0.5em;
+}
+#components .addOnsResult aside p:nth-child(even) {
+  margin-left: auto;
+}
+#components .addOnsResult aside p:nth-child(odd) {
+  color: rgba(115, 115, 116, 0.8);
+}
+#result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#result p {
+  color: rgba(115, 115, 116, 0.8);
+}
+#result h2 {
+  font-family: boldFont;
+  color: hsl(243, 100%, 62%);
+}
+/* #C5 --------------------------- */
+
+.c5 {
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  row-gap: 20px;
+}
+.c5 img {
+  max-width: 80px;
+}
+.c5 p {
+  text-align: center;
+  color: rgba(115, 115, 116, 0.8);
+  width: 85%;
+  line-height: 1.3em;
+}
+.c5 h1 {
+  font-family: boldFont;
+  font-size: 25px;
+}
+
+#changeDuration {
+  text-decoration: underline;
+}
+#changeDuration:hover {
+  cursor: pointer;
+}
+/* #BTN ------------------------- */
+.btn {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  z-index: 10;
+}
+.btn button {
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  border: 0px;
+  font-size: 16px;
+  font-family: MediumFont;
+}
+.btn button:hover {
+  cursor: pointer;
+}
+#prev {
+  color: rgba(115, 115, 116, 0.8);
+  background-color: transparent;
+  opacity: 0;
+}
+#prev:hover {
+  color: hsl(213, 96%, 18%);
+}
+#next {
+  background-color: hsl(243, 100%, 62%);
+  color: white;
+  opacity: 1;
+}
